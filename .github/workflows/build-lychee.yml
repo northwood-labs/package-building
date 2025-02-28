@@ -66,7 +66,7 @@ jobs:
           echo "package_version=$(download-asset latest-tag -r 'lycheeverse/lychee' -s)" >> $GITHUB_OUTPUT
 
       - name: Check to see if we've already built this version
-        uses: actions/cache/restore@0c907a75c2c80ebcb7f088228285e798b750cf8f
+        uses: actions/cache/restore@d4323d4df104b026a6aa633fdb11d772146be0bf
         id: check
         with:
           key: "lychee-${{ steps.lookup_version.outputs.package_version }}"
