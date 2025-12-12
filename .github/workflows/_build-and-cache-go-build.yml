@@ -55,14 +55,14 @@ jobs:
           ref: ${{ github.base_ref }}
 
       - name: Restore any cached build artifacts (musl-aarch64)
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@a7833574556fa59680c1b7cb190c1735db73ebf0 # v5.0.0
         id: restore-musl-aarch64
         with:
           key: "build-cache-${{ inputs.package-name }}-${{ inputs.package-version }}-musl-aarch64"
           path: "/usr/bin/${{ inputs.package-name }}_musl_arm64"
 
       - name: Restore any cached build artifacts (musl-x86_64)
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@a7833574556fa59680c1b7cb190c1735db73ebf0 # v5.0.0
         id: restore-musl-x86_64
         with:
           key: "build-cache-${{ inputs.package-name }}-${{ inputs.package-version }}-musl-x86_64"
@@ -96,7 +96,7 @@ jobs:
           goreleaser release --clean --nightly --skip=announce,publish,validate --verbose
 
       - name: Cache the packages
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@a7833574556fa59680c1b7cb190c1735db73ebf0 # v5.0.0
         id: cache-packages
         with:
           key: "${{ inputs.package-name }}-${{ inputs.package-version }}"
