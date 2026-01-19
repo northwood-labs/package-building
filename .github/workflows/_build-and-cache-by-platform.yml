@@ -58,7 +58,7 @@ jobs:
           egress-policy: audit
 
       - name: Check to see if we've already built this part of the build matrix
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
         id: check
         with:
           key: "${{ inputs.package-name }}-${{ inputs.package-version }}-ubuntu-${{ matrix.release.name }}-${{ matrix.arch.id }}"
@@ -94,7 +94,7 @@ jobs:
 
       - name: Cache the packages
         if: steps.check.outputs.cache-hit != 'true'
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
         id: cache-packages
         with:
           key: "${{ inputs.package-name }}-${{ inputs.package-version }}-ubuntu-${{ matrix.release.name }}-${{ matrix.arch.id }}"
@@ -113,7 +113,7 @@ jobs:
           egress-policy: audit
 
       - name: Cache the packages
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
         id: cache-packages
         with:
           key: "${{ inputs.package-name }}-${{ inputs.package-version }}"

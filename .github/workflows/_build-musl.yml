@@ -70,7 +70,7 @@ jobs:
             cp -vf "${{ github.workspace }}/builds/usr/bin/${{ inputs.package-name }}_musl_${{ matrix.arch }}" /usr/local/bin/${{ inputs.package-name }}_musl_${{ matrix.arch }}
 
       - name: Cache the packages
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
         id: cache-packages
         with:
           key: "build-cache-${{ inputs.package-name }}-${{ inputs.package-version }}-musl-${{ matrix.arch }}"
