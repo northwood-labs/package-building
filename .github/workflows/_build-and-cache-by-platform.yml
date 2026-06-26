@@ -58,7 +58,7 @@ jobs:
           egress-policy: audit
 
       - name: Check to see if we've already built this part of the build matrix
-        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        uses: actions/cache/restore@2c8a9bd7457de244a408f35966fab2fb45fda9c8 # v6.0.0
         id: check
         with:
           key: "${{ inputs.package-name }}-${{ inputs.package-version }}-ubuntu-${{ matrix.release.name }}-${{ matrix.arch.id }}"
