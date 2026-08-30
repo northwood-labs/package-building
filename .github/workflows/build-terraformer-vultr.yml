@@ -70,7 +70,7 @@ jobs:
           echo "package_version=$(download-asset latest-tag -r 'GoogleCloudPlatform/terraformer' -s)" >> $GITHUB_OUTPUT
 
       - name: Check to see if we've already built this version
-        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        uses: actions/cache/restore@2c8a9bd7457de244a408f35966fab2fb45fda9c8 # v6.0.0
         id: check
         with:
           key: "terraformer-vultr-${{ steps.lookup_version.outputs.package_version }}"
